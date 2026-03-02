@@ -24,3 +24,114 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ================================
+   Prose styles for MDX blog posts
+   ================================ */
+
+.prose {
+  --prose-body: #d4d0c8;
+  --prose-headings: #f5f3ef;
+  --prose-links: #f5a623;
+  --prose-code: #f0c060;
+  --prose-code-bg: #1c1b18;
+  --prose-border: #2e2c28;
+  --prose-muted: #6b6860;
+
+  color: var(--prose-body);
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 100%;
+}
+
+.prose h2 {
+  color: var(--prose-headings);
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  color: var(--prose-headings);
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.prose a {
+  color: var(--prose-links);
+  text-decoration: none;
+}
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose strong {
+  color: var(--prose-headings);
+  font-weight: 500;
+}
+
+.prose code {
+  color: var(--prose-code);
+  background: var(--prose-code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: var(--font-mono, monospace);
+}
+.prose code::before,
+.prose code::after {
+  content: none;
+}
+
+.prose pre {
+  background: var(--prose-code-bg);
+  border: 1px solid var(--prose-border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #d4d0c8;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--prose-links);
+  padding-left: 1.25rem;
+  color: var(--prose-muted);
+  margin-left: 0;
+  margin-bottom: 1.25rem;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.prose li {
+  margin-bottom: 0.4rem;
+  color: var(--prose-body);
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--prose-border);
+  margin: 2.5rem 0;
+}
+
+.prose img {
+  border-radius: 8px;
+  max-width: 100%;
+}
