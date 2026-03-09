@@ -304,10 +304,11 @@ export default function LandingPage() {
             marginBottom: '1rem',
             letterSpacing: '-0.02em',
           }}>
-            Tu próximo paso empieza acá.
+            Dale a tu Pastor Alemán la vida feliz que merece.
           </h2>
           <p style={{ fontSize: '1rem', color: 'var(--text-light)', marginBottom: '2rem', lineHeight: 1.7 }}>
-            Por solo <strong style={{ color: 'var(--gold)' }}>{product.price}</strong> tenés acceso inmediato.
+            Por solo <strong style={{ color: 'var(--gold)' }}>{product.price}</strong> tienes acceso inmediato.
+            Además recibes gratis un mini libro de ilustraciones de pastorcitos para imprimir.
           </p>
           <a href={product.ctaUrl} target="_blank" rel="noopener noreferrer"
             className="btn-primary"

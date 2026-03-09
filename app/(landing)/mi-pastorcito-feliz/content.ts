@@ -27,7 +27,7 @@ export const product = {
 
   // ── Precio ─────────────────────────────────────────────────────────────────
   // priceOld aparece tachado para crear sensación de descuento
-  price: 'USD 9,99',
+  price: 'USD 9.99',
   priceOld: 'USD 20',
 
   // ── CTA (botón de compra) ──────────────────────────────────────────────────
