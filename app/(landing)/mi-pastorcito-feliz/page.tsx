@@ -18,7 +18,7 @@ import { product } from './content';
 export const metadata: Metadata = {
   title: product.name,
   description: product.description,
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 
 export default function LandingPage() {
