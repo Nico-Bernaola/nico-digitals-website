@@ -1,5 +1,4 @@
-// ESTE ARCHIVO VA EN: app/blog/[slug]/page.tsx
-// Muestra un post individual en /blog/nombre-del-post
+// ESTE ARCHIVO VA EN: app/(site)/blog/[slug]/page.tsx
 
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -25,20 +24,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await client.fetch<SanityPost | null>(POST_BY_SLUG_QUERY, { slug });
 
-  if (!post) return { title: 'Post Not Found' };
+  if (!post) return { title: 'Post no encontrado' };
+
+  const url = `https://www.nicodigitals.site/blog/${slug}`;
 
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Nico Digitals`,
       description: post.description,
+      url,
       type: 'article',
       publishedTime: post.publishedAt,
+      authors: [post.author ?? 'Nico Bernaola'],
+      tags: post.tags ?? [],
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: `${post.title} | Nico Digitals`,
       description: post.description,
     },
   };
@@ -51,73 +56,118 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
-      <div className="max-w-2xl mx-auto px-6 py-20">
+    <main style={{ minHeight: '100vh', background: 'var(--bg-dark)' }}>
+      <div className="container-sm" style={{ padding: '4rem 1.5rem 6rem' }}>
+
+        {/* Back link */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-stone-500 hover:text-amber-400 transition-colors duration-200 mb-12"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            fontSize: '0.75rem',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            color: 'var(--text-white)',
+            textDecoration: 'none',
+            marginBottom: '3rem',
+            transition: 'color 0.2s',
+          }}
         >
-          <span aria-hidden="true">←</span> All posts
+          ← Todos los artículos
         </Link>
 
-        <header className="mb-12">
+        {/* Post header */}
+        <header style={{ marginBottom: '3rem' }}>
           {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mb-4">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
               {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[10px] tracking-[0.2em] uppercase px-2 py-0.5 rounded-full bg-stone-800 text-amber-400"
-                >
+                <span key={tag} style={{
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  color: 'var(--gold)',
+                  background: 'rgba(191,161,89,0.08)',
+                  border: '1px solid rgba(191,161,89,0.2)',
+                  padding: '0.2rem 0.6rem',
+                  borderRadius: '2px',
+                }}>
                   {tag}
                 </span>
               ))}
             </div>
           )}
 
-          <h1 className="text-3xl sm:text-4xl font-light tracking-tight leading-snug text-stone-100">
+          <h1 style={{
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+            fontWeight: 700,
+            color: 'var(--text-white)',
+            lineHeight: 1.2,
+            letterSpacing: '-0.02em',
+            marginBottom: '1rem',
+          }}>
             {post.title}
           </h1>
 
           {post.description && (
-            <p className="mt-4 text-lg text-stone-400 leading-relaxed font-light">
+            <p style={{
+              fontSize: '1.1rem',
+              color: 'var(--text-light)',
+              lineHeight: 1.7,
+              marginBottom: '1.5rem',
+            }}>
               {post.description}
             </p>
           )}
 
-          <div className="mt-6 flex items-center gap-4 text-xs text-stone-600 font-mono">
-            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <time style={{ fontSize: '0.8rem', color: '#555', fontFamily: 'monospace' }}>
+              {new Date(post.publishedAt).toLocaleDateString('es-AR', {
+                year: 'numeric', month: 'long', day: 'numeric',
+              })}
+            </time>
             {post.author && (
               <>
-                <span className="text-stone-800">·</span>
-                <span>{post.author}</span>
+                <span style={{ color: '#333' }}>·</span>
+                <span style={{ fontSize: '0.8rem', color: '#555' }}>{post.author}</span>
               </>
             )}
           </div>
 
-          <div className="mt-8 h-px bg-gradient-to-r from-amber-400/30 via-stone-700 to-transparent" />
+          <div style={{
+            marginTop: '2rem',
+            height: '1px',
+            background: 'linear-gradient(to right, var(--gold), #2a2a2a)',
+          }} />
         </header>
 
-        <article>
+        {/* Post body */}
+        <article className="prose">
           <PortableText value={post.body} components={portableTextComponents} />
         </article>
 
-        <div className="mt-16 pt-8 border-t border-stone-800">
+        {/* Back link bottom */}
+        <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #2a2a2a' }}>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-stone-500 hover:text-amber-400 transition-colors duration-200"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontSize: '0.75rem',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'var(--text-white)',
+              textDecoration: 'none',
+              transition: 'color 0.2s',
+            }}
           >
-            <span aria-hidden="true">←</span> Back to blog
+            ← Volver al blog
           </Link>
         </div>
       </div>
     </main>
   );
-}
-
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
 }

@@ -1,6 +1,3 @@
-// ESTE ARCHIVO VA EN: app/blog/page.tsx
-// Muestra la lista de todos los posts en /blog
-
 import Link from 'next/link';
 import { client } from '@/sanity/lib/client';
 import { ALL_POSTS_QUERY } from '@/sanity/queries';
@@ -8,82 +5,160 @@ import type { SanityPostMeta } from '@/types/blog';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Articles, insights and ideas.',
+  title: 'Blog — Estrategias para Ganar Dinero Online',
+  description:
+    'Artículos prácticos sobre cómo ganar dinero online, emprender desde cero y construir ingresos digitales. Estrategias reales sin humo, por Nico Bernaola.',
+  alternates: {
+    canonical: 'https://www.nicodigitals.site/blog',
+  },
+  openGraph: {
+    title: 'Blog de Nico Digitals — Estrategias para Ganar Dinero Online',
+    description:
+      'Artículos prácticos sobre cómo ganar dinero online, emprender desde cero y construir ingresos digitales. Estrategias reales sin humo, por Nico Bernaola.',
+    url: 'https://www.nicodigitals.site/blog',
+    type: 'website',
+  },
 };
 
 export const revalidate = 60;
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('es-AR', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
 
 export default async function BlogPage() {
   const posts = await client.fetch<SanityPostMeta[]>(ALL_POSTS_QUERY);
 
   return (
-    <main className="min-h-screen bg-stone-950 text-stone-100">
-      <div className="max-w-2xl mx-auto px-6 py-20">
-        <div className="mb-16">
-          <span className="text-xs tracking-[0.3em] uppercase text-amber-400 font-medium">
+    <main style={{ minHeight: '100vh', background: 'var(--bg-dark)' }}>
+
+      {/* Header */}
+      <section style={{ borderBottom: '1px solid #2a2a2a', padding: '4rem 0 3rem' }}>
+        <div className="container-sm">
+          <span style={{
+            display: 'block',
+            fontSize: '0.7rem',
+            letterSpacing: '0.3em',
+            textTransform: 'uppercase',
+            color: 'var(--gold)',
+            marginBottom: '1rem',
+          }}>
             Writing
           </span>
-          <h1 className="mt-3 text-4xl font-light tracking-tight text-stone-100">
+          <h1 style={{
+            fontFamily: 'var(--font-heading)',
+            fontSize: 'clamp(2rem, 5vw, 3rem)',
+            fontWeight: 700,
+            color: 'var(--text-white)',
+            marginBottom: '0.75rem',
+            letterSpacing: '-0.02em',
+          }}>
             Blog
           </h1>
-          <p className="mt-3 text-stone-400 text-base leading-relaxed">
-            Thoughts on design, development, and the digital craft.
+          <p style={{ fontSize: '1rem', color: 'var(--text-light)', maxWidth: '480px' }}>
+            Estrategias, herramientas y reflexiones para construir tu libertad financiera digital.
           </p>
         </div>
+      </section>
 
-        {posts.length === 0 ? (
-          <p className="text-stone-500 text-sm">No posts yet. Check back soon.</p>
-        ) : (
-          <ul className="divide-y divide-stone-800/60">
-            {posts.map((post) => (
-              <li key={post._id}>
-                <Link
-                  href={`/blog/${post.slug.current}`}
-                  className="group flex items-start justify-between py-6 gap-6 hover:text-amber-400 transition-colors duration-200"
-                >
-                  <div className="flex-1 min-w-0">
-                    <h2 className="text-base font-medium text-stone-100 group-hover:text-amber-400 transition-colors duration-200 truncate">
-                      {post.title}
-                    </h2>
-                    {post.description && (
-                      <p className="mt-1 text-sm text-stone-500 line-clamp-2 leading-relaxed">
-                        {post.description}
-                      </p>
-                    )}
-                    {post.tags && post.tags.length > 0 && (
-                      <div className="mt-2 flex flex-wrap gap-1.5">
-                        {post.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-stone-800 text-stone-400"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <time
-                    dateTime={post.publishedAt}
-                    className="shrink-0 text-xs text-stone-600 pt-0.5 font-mono"
+      {/* Post list */}
+      <section style={{ padding: '2rem 0 6rem' }}>
+        <div className="container-sm">
+          {posts.length === 0 ? (
+            <p style={{ color: '#555', fontSize: '0.9rem', paddingTop: '3rem' }}>
+              No hay artículos publicados todavía. Volvé pronto.
+            </p>
+          ) : (
+            <ul style={{ listStyle: 'none' }}>
+              {posts.map((post, i) => (
+                <li key={post._id} style={{
+                  borderBottom: '1px solid #242424',
+                }}>
+                  <Link
+                    href={`/blog/${post.slug.current}`}
+                    style={{ textDecoration: 'none', display: 'block', padding: '2rem 0' }}
                   >
-                    {formatDate(post.publishedAt)}
-                  </time>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '2rem', flexWrap: 'wrap' }}>
+                      <div style={{ flex: 1, minWidth: '200px' }}>
+
+                        {/* Tags */}
+                        {post.tags && post.tags.length > 0 && (
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.6rem' }}>
+                            {post.tags.map((tag) => (
+                              <span key={tag} style={{
+                                fontSize: '0.65rem',
+                                letterSpacing: '0.15em',
+                                textTransform: 'uppercase',
+                                color: 'var(--gold)',
+                                background: 'rgba(191,161,89,0.08)',
+                                border: '1px solid rgba(191,161,89,0.2)',
+                                padding: '0.2rem 0.6rem',
+                                borderRadius: '2px',
+                              }}>
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Title */}
+                        <h2 style={{
+                          fontFamily: 'var(--font-heading)',
+                          fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+                          fontWeight: 600,
+                          color: 'var(--text-white)',
+                          marginBottom: '0.5rem',
+                          lineHeight: 1.3,
+                          transition: 'color 0.2s',
+                        }}
+                          className="post-title-hover"
+                        >
+                          {post.title}
+                        </h2>
+
+                        {/* Description */}
+                        {post.description && (
+                          <p style={{
+                            fontSize: '0.875rem',
+                            color: 'var(--text-light)',
+                            lineHeight: 1.6,
+                            maxWidth: '560px',
+                          }}>
+                            {post.description}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Date + arrow */}
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem', flexShrink: 0 }}>
+                        <time style={{
+                          fontSize: '0.75rem',
+                          color: '#555',
+                          fontFamily: 'monospace',
+                          whiteSpace: 'nowrap',
+                        }}>
+                          {formatDate(post.publishedAt)}
+                        </time>
+                        <span style={{ color: 'var(--gold)', fontSize: '1.1rem' }}>→</span>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </section>
+
+      <style>{`
+        a:hover .post-title-hover {
+          color: var(--gold) !important;
+        }
+      `}</style>
     </main>
   );
-}
-
-function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
 }
