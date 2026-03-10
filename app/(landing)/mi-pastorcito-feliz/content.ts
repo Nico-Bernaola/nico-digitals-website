@@ -33,7 +33,7 @@ export const product = {
   // ── CTA (botón de compra) ──────────────────────────────────────────────────
   // ctaUrl: reemplazá '#' por tu link real de Hotmart cuando lo tengas
   cta: 'Quiero el eBook ahora →',
-  ctaUrl: '#',
+  ctaUrl: 'https://pay.hotmart.com/R104821458N',
 
   // ── Garantía ───────────────────────────────────────────────────────────────
   guarantee: '7 días de garantía — si no te sirve, te devolvemos el dinero.',
