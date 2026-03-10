@@ -22,7 +22,7 @@ export const product = {
 
   // ── Specs (datos visuales en el hero) ──────────────────────────────────────
   pages: '90+ páginas',
-  format: 'eBook descargable',
+  format: 'eBook',
   language: 'Español',
 
   // ── Precio ─────────────────────────────────────────────────────────────────
