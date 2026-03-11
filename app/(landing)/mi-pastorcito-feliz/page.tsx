@@ -14,6 +14,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { product } from './content';
+import CountdownBar from '@/components/landing/CountdownBar';
+import SocialProof from '@/components/landing/SocialProof';
 
 export const metadata: Metadata = {
   title: product.name,
@@ -27,6 +29,7 @@ export default function LandingPage() {
 
   return (
     <div style={{ background: 'var(--bg-dark)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+      <CountdownBar offerText={product.countdownText} />
 
       {/* ── Header ──────────────────────────────────────────────────────── */}
       <header style={{
@@ -262,6 +265,13 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+
+      <SocialProof
+        quote={product.quote}
+        quoteAuthor={product.quoteAuthor}
+        guaranteeTitle={product.guaranteeTitle}
+        guaranteeText={product.guaranteeText}
+      />
 
       {/* ── CTA Final ───────────────────────────────────────────────────── */}
       <section style={{
