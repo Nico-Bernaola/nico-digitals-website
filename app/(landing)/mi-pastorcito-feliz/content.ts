@@ -33,7 +33,7 @@ export const product = {
   // ── CTA (botón de compra) ──────────────────────────────────────────────────
   // ctaUrl: reemplazá '#' por tu link real de Hotmart cuando lo tengas
   cta: 'Quiero el eBook ahora →',
-  ctaUrl: '#',
+  ctaUrl: 'https://pay.hotmart.com/R104821458N',
 
   // ── Garantía ───────────────────────────────────────────────────────────────
   guarantee: '7 días de garantía — si no te sirve, te devolvemos el dinero.',
@@ -81,4 +81,21 @@ export const product = {
     cover:  '/products/mi-pastorcito/cover.png',  // Ejemplo: '/products/ebook-libertad-digital/cover.png'
   },
 
+    // ── Countdown ──────────────────────────────────────────────────────────────
+  // Texto que aparece en la barra dorada junto al timer
+  countdownText: 'Esta oferta especial de lanzamiento expira en',
+
+  // ── Social Proof ───────────────────────────────────────────────────────────
+  // quote: tu promesa/filosofía — lo que te hace diferente
+  // quoteAuthor: tu nombre y rol
+  // guaranteeTitle: título de la sección de garantía
+  // guaranteeText: array de párrafos explicando la garantía
+  quote: 'No vendo humo ni atajos mágicos. Este eBook es el mapa que yo hubiera querido tener cuando empecé — honesto, práctico y directo al resultado.',
+  quoteAuthor: 'Nico Bernaola, Nico Digitals',
+  guaranteeTitle: 'Garantía de 7 días sin preguntas',
+  guaranteeText: [
+    'Si en los próximos 7 días sentís que el contenido no cumplió lo que prometí, te devuelvo el 100% de tu dinero. Sin formularios, sin excusas.',
+    'No me interesa tu plata si el producto no te sirve. Me interesa que arranques.',
+  ],
+  
 };
