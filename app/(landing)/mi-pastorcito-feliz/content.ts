@@ -90,12 +90,12 @@ export const product = {
   // quoteAuthor: tu nombre y rol
   // guaranteeTitle: título de la sección de garantía
   // guaranteeText: array de párrafos explicando la garantía
-  quote: 'No vendo humo ni atajos mágicos. Este eBook es el mapa que yo hubiera querido tener cuando empecé — honesto, práctico y directo al resultado.',
+  quote: 'No vendo humo ni atajos mágicos. Este eBook es el mapa que yo hubiera querido tener cuando empecé honesto, práctico y directo al resultado.',
   quoteAuthor: 'Nico Bernaola, Nico Digitals',
   guaranteeTitle: 'Garantía de 7 días sin preguntas',
   guaranteeText: [
     'Si en los próximos 7 días sentís que el contenido no cumplió lo que prometí, te devuelvo el 100% de tu dinero. Sin formularios, sin excusas.',
     'No me interesa tu plata si el producto no te sirve. Me interesa que arranques.',
   ],
-  
+
 };
