@@ -13,12 +13,12 @@ export const product = {
   // ── SEO ────────────────────────────────────────────────────────────────────
   // name aparece en el <h1> y en el título de la pestaña del browser
   // description SOLO se usa para Google — el lector no lo ve en la página
-  name: 'El Método para Tener un Pastor Alemán Feliz, Saludable y Bien Educado',
+  name: 'El Pastor Alemán no es para todos. Si estás leyendo esto, probablemente sí es para tí.',
   description: 'Aprende paso a paso cómo criar un Pastor Alemán equilibrado, obediente y saludable incluso si eres dueño primerizo.',
 
   // ── Hero ───────────────────────────────────────────────────────────────────
   // tagline es la frase gancho debajo del título — la promesa principal
-  tagline: 'Aprende paso a paso cómo criar un Pastor Alemán equilibrado, obediente y saludable incluso si eres dueño primerizo.',
+  tagline: 'Aprende paso a paso cómo criar un Pastor Alemán equilibrado, saludable y obediente sin cometer los errores que arruinan a muchos perros.',
 
   // ── Specs (datos visuales en el hero) ──────────────────────────────────────
   pages: '90+ páginas',
@@ -36,7 +36,7 @@ export const product = {
   ctaUrl: 'https://pay.hotmart.com/R104821458N',
 
   // ── Garantía ───────────────────────────────────────────────────────────────
-  guarantee: '7 días de garantía — si no te sirve, te devolvemos el dinero.',
+  guarantee: '7 días de garantía — si no te sirve, te devolvemos el dinero — Precio especial de lanzamiento.',
 
   // ── Sección Problema ───────────────────────────────────────────────────────
   // problem es la pregunta que identifica al lector con su dolor
