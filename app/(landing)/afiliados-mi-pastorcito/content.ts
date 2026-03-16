@@ -16,8 +16,8 @@ export const programa = {
   description: 'Promové un producto de nicho con alta conversión y comisiones del 50%. Materiales listos para usar.',
 
   // ── Hero ───────────────────────────────────────────────────────────────────
-  productName: 'El Método para Tener un Pastor Alemán Feliz, Saludable y Bien Educado',
-  tagline: 'Un nicho apasionado, un producto que resuelve un problema real, y comisiones que valen la pena.',
+  productName: 'Gana Dinero en remoto sin experiencia previa con un producto de alto valor para un nicho apasionado',
+  tagline: 'Un nicho apasionado con muchos clientes potenciales, un producto que resuelve un problema real, y comisiones del 70%. Producto con alta demanda en un mercado de nicho que no para de crecer.',
 
   // ── Números clave (aparecen destacados arriba) ─────────────────────────────
   stats: [
