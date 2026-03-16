@@ -22,7 +22,7 @@ export const programa = {
   // ── Números clave (aparecen destacados arriba) ─────────────────────────────
   stats: [
     { value: '70%',     label: 'Comisión por venta' },
-    { value: 'USD 7',   label: 'Ganancias estimadas por venta' },
+    { value: 'USD 6',   label: 'Ganancias estimadas por venta' },
     { value: 'ETERNA', label: 'Cookie duration' },
     { value: 'USD 9.99', label: 'Ticket del producto' },
   ],
@@ -38,7 +38,7 @@ export const programa = {
   // ── Comisiones ─────────────────────────────────────────────────────────────
   commission: {
     percentage: '70%',
-    perSale: 'USD 7',
+    perSale: 'USD 6',
     cookieDays: 'ETERNA',
     platform: 'Hotmart',
     notes: 'El pago se procesa automáticamente por Hotmart. Sin intermediarios, sin demoras.',
