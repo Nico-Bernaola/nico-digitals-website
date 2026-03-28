@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nico Digitals — Libertad Financiera Digital',
-  description: 'Herramientas, estrategias y recursos recomendados para construir ingresos digitales y alcanzar tu libertad financiera. Por Nico Bernaola.',
+  title: 'Nico Digitals — Aprende a trabajar en el mundo digital',
+  description: 'Herramientas, estrategias y recursos recomendados para construir ingresos digitales y crecer. Por Nico Bernaola.',
 };
 
 // ─── Section: Hero ──────────────────────────────────────────────────────────
@@ -50,9 +50,9 @@ function Hero() {
           </span>
 
           <h1 className="fade-up fade-up-2" style={{ marginBottom: '1.5rem' }}>
-            Construí tu<br />
-            <span style={{ color: 'var(--gold)' }}>libertad financiera</span><br />
-            en el mundo digital.
+            Construí tus<br />
+            <span style={{ color: 'var(--gold)' }}>sistemas</span><br />
+            para trabajar en el mundo digital.
           </h1>
 
           <p className="fade-up fade-up-3" style={{
@@ -62,7 +62,7 @@ function Hero() {
             marginBottom: '2.5rem',
             color: 'var(--text-light)',
           }}>
-            Recursos, cursos y herramientas que yo mismo uso y recomiendo para generar ingresos online. Sin humo. Sin atajos falsos.
+            Recursos, cursos y herramientas que yo mismo uso y recomiendo para trabajar de forma online.
           </p>
 
           <div className="fade-up fade-up-4" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -91,13 +91,13 @@ function About() {
               Quién soy
             </span>
             <h2 style={{ color: 'var(--text-white)', marginBottom: '1.25rem' }}>
-              No soy un gurú.<br />Soy alguien que encontró el camino.
+              No soy un gurú.<br /> Soy alguien que divulga herramientas para construir tu carrera de freelancing.
             </h2>
             <p style={{ marginBottom: '1rem' }}>
               Empecé desde cero, sin contactos y sin inversión inicial. Aprendí qué funciona y qué no — y acá comparto solo lo que vale la pena.
             </p>
             <p>
-              Nico Digitals es mi espacio para documentar ese camino y ayudarte a recorrer el tuyo más rápido.
+              Nico Digitals es mi espacio para documentar mi camino y ayudarte a recorrer el tuyo más rápido.
             </p>
           </div>
 
