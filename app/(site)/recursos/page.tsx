@@ -52,7 +52,8 @@ export default function RecursosPage() {
             Lo que recomiendo
           </h1>
           <p style={{ fontSize: '1rem', color: 'var(--text-light)', maxWidth: '520px' }}>
-            Cursos, eBooks y herramientas que uso o he usado. Solo recomiendo lo que conozco.
+            Cursos, eBooks y herramientas que cree yo y herramientas que han creado los mejores en la industria. 
+            Solo recomiendo lo que conozco.
           </p>
         </div>
       </section>

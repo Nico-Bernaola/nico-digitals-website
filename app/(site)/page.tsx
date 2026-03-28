@@ -137,11 +137,6 @@ function About() {
 function WhatYoullFind() {
   const items = [
     {
-      icon: '📚',
-      title: 'Cursos Recomendados',
-      desc: 'Seleccioné los mejores cursos de marketing, negocios y desarrollo personal que realmente transforman.',
-    },
-    {
       icon: '🛠',
       title: 'Herramientas Digitales',
       desc: 'Las herramientas que uso en mi negocio digital, ordenadas por categoría y con mi opinión honesta.',
@@ -258,7 +253,7 @@ function CTA() {
           Empezá hoy
         </span>
         <h2 style={{ maxWidth: '600px', margin: '0 auto 1.25rem' }}>
-          Tu próximo paso hacia la libertad financiera.
+          Tu próximo paso hacia tu trabajo remoto.
         </h2>
         <p style={{ maxWidth: '480px', margin: '0 auto 2.5rem', fontSize: '1rem' }}>
           Explorá los recursos que recomiendo y encontrá el que mejor se adapta a tu momento actual.

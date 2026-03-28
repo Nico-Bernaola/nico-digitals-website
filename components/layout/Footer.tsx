@@ -64,7 +64,8 @@ export default function Footer() {
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {[
                 { href: 'https://instagram.com', label: 'Instagram' },
-                { href: 'https://facebook.com', label: 'Facebook' },
+                { href: 'https://www.facebook.com/profile.php?id=61588267451722', label: 'Facebook' },
+                { href: 'https://www.linkedin.com/in/nico-bernaola/?locale=es_ES', label: 'Linkedin' },
               ].map(({ href, label }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   style={{ fontSize: '0.875rem', color: 'var(--text-light)', textDecoration: 'none', transition: 'color 0.2s' }}

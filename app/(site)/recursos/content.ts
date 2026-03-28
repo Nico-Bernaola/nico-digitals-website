@@ -44,6 +44,17 @@ export const recursos: Resource[] = [
     pinned: true,
     date: '2026-03-28',
   },
+  {
+    id: 'calculadora-coi',
+    title: 'Lo que te estas perdiendo por no subir contenido',
+    description: 'Descubre todo lo que te perdés por no subir contenido(de calidad) a tus redes sociales.',
+    image: null,
+    category: 'herramienta',
+    url: 'recursos/calculadora',
+    external: false,
+    pinned: true,
+    date: '2026-03-28',
+  },
 
   // ── Ejemplos comentados — descomentá y completá cuando los tengas ─────────
   // {
