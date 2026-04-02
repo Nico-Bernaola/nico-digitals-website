@@ -39,17 +39,17 @@ export default async function BlogPage() {
       {/* Header */}
       <section style={{ borderBottom: '1px solid #2a2a2a', padding: '4rem 0 3rem' }}>
         <div className="container-sm">
-          <span style={{
+          <h1 style={{
             display: 'block',
             fontSize: '0.7rem',
             letterSpacing: '0.3em',
             textTransform: 'uppercase',
-            color: 'var(--gold)',
+            color: '#d4af37',
             marginBottom: '1rem',
           }}>
             Writing
-          </span>
-          <h1 style={{
+          </h1>
+          <h2 style={{
             fontFamily: 'var(--font-heading)',
             fontSize: 'clamp(2rem, 5vw, 3rem)',
             fontWeight: 700,
@@ -58,7 +58,7 @@ export default async function BlogPage() {
             letterSpacing: '-0.02em',
           }}>
             Blog
-          </h1>
+          </h2>
           <p style={{ fontSize: '1rem', color: 'var(--text-light)', maxWidth: '480px' }}>
             Estrategias, herramientas y reflexiones para construir tu libertad financiera digital.
           </p>
@@ -69,14 +69,14 @@ export default async function BlogPage() {
       <section style={{ padding: '2rem 0 6rem' }}>
         <div className="container-sm">
           {posts.length === 0 ? (
-            <p style={{ color: '#555', fontSize: '0.9rem', paddingTop: '3rem' }}>
+            <p style={{ color: '#9ca3af', fontSize: '0.9rem', paddingTop: '3rem' }}>
               No hay artículos publicados todavía. Volvé pronto.
             </p>
           ) : (
             <ul style={{ listStyle: 'none' }}>
               {posts.map((post, i) => (
                 <li key={post._id} style={{
-                  borderBottom: '1px solid #242424',
+                  borderBottom: '1px solid #3f3f46',
                 }}>
                   <Link
                     href={`/blog/${post.slug.current}`}
@@ -137,7 +137,7 @@ export default async function BlogPage() {
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem', flexShrink: 0 }}>
                         <time style={{
                           fontSize: '0.75rem',
-                          color: '#555',
+                          color: '#d1d5db',
                           fontFamily: 'monospace',
                           whiteSpace: 'nowrap',
                         }}>
@@ -156,7 +156,7 @@ export default async function BlogPage() {
 
       <style>{`
         a:hover .post-title-hover {
-          color: var(--gold) !important;
+          color: #d4af37 !important;
         }
       `}</style>
     </main>
