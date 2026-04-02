@@ -212,13 +212,13 @@ async function LatestPosts() {
             <Link key={post._id} href={`/blog/${post.slug.current}`} style={{ textDecoration: 'none' }}>
               <article className="post-card" style={{
                 padding: '1.75rem',
-                border: '1px solid #e0d6cc',
+                border: '1px solid #d1d5db',
                 background: '#fff',
                 transition: 'border-color 0.2s, transform 0.2s',
                 height: '100%',
               }}
               >
-                <time style={{ fontSize: '0.7rem', letterSpacing: '0.1em', color: 'var(--gold)', textTransform: 'uppercase' }}>
+                <time style={{ fontSize: '0.7rem', letterSpacing: '0.1em', color: '#d4af37', textTransform: 'uppercase' }}>
                   {new Date(post.publishedAt).toLocaleDateString('es-AR', { year: 'numeric', month: 'short', day: 'numeric' })}
                 </time>
                 <h3 style={{ fontSize: '1.05rem', margin: '0.6rem 0', color: 'var(--text-dark)', lineHeight: 1.3 }}>{post.title}</h3>
