@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
           )}
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <time style={{ fontSize: '0.8rem', color: '#555', fontFamily: 'monospace' }}>
+            <time style={{ fontSize: '0.8rem', color: '#9ca3af', fontFamily: 'monospace' }}>
               {new Date(post.publishedAt).toLocaleDateString('es-AR', {
                 year: 'numeric', month: 'long', day: 'numeric',
               })}
@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.author && (
               <>
                 <span style={{ color: '#333' }}>·</span>
-                <span style={{ fontSize: '0.8rem', color: '#555' }}>{post.author}</span>
+                <span style={{ fontSize: '0.8rem', color: '#9ca3af' }}>{post.author}</span>
               </>
             )}
           </div>
