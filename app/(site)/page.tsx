@@ -167,7 +167,7 @@ function WhatYoullFind() {
           {items.map(({ icon, title, desc }) => (
             <div key={title} className="card-dark" style={{ padding: '2rem' }}>
               <div style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>{icon}</div>
-              <h4 style={{ marginBottom: '0.6rem', color: 'var(--text-white)' }}>{title}</h4>
+              <h3 style={{ marginBottom: '0.6rem', color: 'var(--text-white)' }}>{title}</h3>
               <p style={{ fontSize: '0.875rem', lineHeight: 1.7 }}>{desc}</p>
             </div>
           ))}
