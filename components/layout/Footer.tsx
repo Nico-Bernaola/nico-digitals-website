@@ -38,9 +38,9 @@ export default function Footer() {
 
           {/* Nav col */}
           <div>
-            <h4 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>
               Navegación
-            </h4>
+            </h2>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {[
                 { href: '/', label: 'Inicio' },
@@ -58,9 +58,9 @@ export default function Footer() {
 
           {/* Social col */}
           <div>
-            <h4 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>
               Seguime
-            </h4>
+            </h3>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {[
                 { href: 'https://instagram.com', label: 'Instagram' },
@@ -88,10 +88,10 @@ export default function Footer() {
           alignItems: 'center',
           gap: '1rem',
         }}>
-          <p style={{ fontSize: '0.75rem', color: '#555' }}>
+          <p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>
             © {year} Nico Digitals · Nico Bernaola. Todos los derechos reservados.
           </p>
-          <p style={{ fontSize: '0.75rem', color: '#444' }}>
+          <p style={{ fontSize: '0.75rem', color: '#6b7280' }}>
             Este sitio puede contener enlaces de afiliado.
           </p>
         </div>
