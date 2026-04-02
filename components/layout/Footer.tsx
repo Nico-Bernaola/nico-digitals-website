@@ -68,9 +68,7 @@ export default function Footer() {
                 { href: 'https://www.linkedin.com/in/nico-bernaola/?locale=es_ES', label: 'Linkedin' },
               ].map(({ href, label }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                  style={{ fontSize: '0.875rem', color: 'var(--text-light)', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-light)')}>
+                  style={{ fontSize: '0.875rem', color: 'var(--text-light)', textDecoration: 'none', transition: 'color 0.2s' }}>
                   {label} ↗
                 </a>
               ))}
@@ -80,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{
-          borderTop: '1px solid #2a2a2a',
+          borderTop: '1px solid #3f3f46',
           paddingTop: '1.5rem',
           display: 'flex',
           flexWrap: 'wrap',
@@ -91,7 +89,7 @@ export default function Footer() {
           <p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>
             © {year} Nico Digitals · Nico Bernaola. Todos los derechos reservados.
           </p>
-          <p style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+          <p style={{ fontSize: '0.75rem', color: '#9ca3af' }}>
             Este sitio puede contener enlaces de afiliado.
           </p>
         </div>
